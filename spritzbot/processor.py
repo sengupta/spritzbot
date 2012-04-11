@@ -7,6 +7,9 @@ class TweetProcessor:
     commands = []
     base_path = os.path.dirname(os.path.realpath(__file__))
     plugin_path = os.path.join(base_path, "plugins")
+
+    def __init__(self):
+        self.load_plugins()
     
     def load_plugins(self):
         """Loads plugins and associated commands."""
@@ -26,6 +29,5 @@ class TweetProcessor:
     
 
 tp = TweetProcessor()
-tp.load_plugins()
 print tp.commands
-        
+
