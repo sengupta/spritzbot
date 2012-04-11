@@ -51,8 +51,6 @@ parameters['oauth_signature'] = signature
 
 data = urllib.urlencode(parameters)
 
-keep_looping = True
-
 def on_receive(data):
     """Hands over data to tweet processing function."""
     if data is not None or data is not '\r\n':
