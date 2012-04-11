@@ -1,0 +1,4 @@
+Spritzbot.kpf
+venv
+activate
+*.pyc
