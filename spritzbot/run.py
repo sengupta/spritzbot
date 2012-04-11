@@ -1,5 +1,6 @@
 # System Imports
 import re
+import sys
 import json
 import time
 import math
@@ -14,8 +15,9 @@ from oauth.oauth import OAuthRequest, OAuthSignatureMethod_HMAC_SHA1
 try:
     import config
 except:
-    print "Configuration error: copy config_example.py to config.py \
-           and follow instructions in it."
+    print "Configuration ERROR: copy config_example.py into config.py",
+    print "and follow instructions in the file."
+    sys.exit(0)
 
 class Token(object):
     def __init__(self,key,secret):
