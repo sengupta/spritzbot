@@ -2,3 +2,4 @@ Spritzbot.kpf
 venv
 activate
 *.pyc
+config.py
