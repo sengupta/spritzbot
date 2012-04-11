@@ -1,10 +1,11 @@
 import os
 import re
 import imp
+import json
 
 class TweetProcessor:
     plugins = {}
-    commands = []
+    commands = {}
     base_path = os.path.dirname(os.path.realpath(__file__))
     plugin_path = os.path.join(base_path, "plugins")
 
@@ -25,9 +26,15 @@ class TweetProcessor:
                 self.plugins.update({name:plugin})
                 
                 for command in plugin.commands():
-                    self.commands.append({name:command})
+                    status_type = command['type']
+                    triggers = command['triggers']
+                    if self.commands.has_key(status_type):
+                        self.commands[status_type].append([{'plugin':name,'triggers':triggers}])
+                    else:
+                        self.commands[status_type] = [{'plugin':name,'triggers':triggers}]
     
 
 tp = TweetProcessor()
 print tp.commands
+#tp.process("""{"friends":[123,456,789]}""")
 
