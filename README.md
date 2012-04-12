@@ -30,7 +30,8 @@ creating your app and getting your access token.
 
 ## Usage:
 
-	$ python run.py
+    $ source venv/bin/python
+	$ python spritzbot/run.py
 
 This will execute the app and start streaming. Events will be handed over to
 plugins as and when they come in. 
