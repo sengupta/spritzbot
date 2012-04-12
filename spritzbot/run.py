@@ -12,6 +12,9 @@ import urllib2
 from hashlib import md5
 from oauth.oauth import OAuthRequest, OAuthSignatureMethod_HMAC_SHA1
 
+# App imports
+import processor
+
 try:
     import config
 except:
@@ -53,11 +56,14 @@ parameters['oauth_signature'] = signature
 
 data = urllib.urlencode(parameters)
 
+
+tweet_processor = processor.TweetProcessor()
+
 def on_receive(data):
     """Hands over data to tweet processing function."""
     if data is not None or data is not '\r\n':
         # do something with the data.
-        print data
+        tweet_processor.process(data)
         
     return None
     

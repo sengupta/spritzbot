@@ -63,10 +63,11 @@ class TweetProcessor:
                             print self.plugins[command['plugin']].process(data)
 
 
-tp = TweetProcessor()
-
-tweet = r"""{"text":"Chai craving!","id":190207791800135680}"""
-friends = r"""{"friends":[123,456,789]}"""
-
-tp.process(friends)
-tp.process(tweet)
+if __name__ == '__main__':
+    tp = TweetProcessor()
+    
+    tweet = r"""{"text":"Chai craving!","id":190207791800135680}"""
+    friends = r"""{"friends":[123,456,789]}"""
+    
+    tp.process(friends)
+    tp.process(tweet)
