@@ -39,7 +39,6 @@ class TweetProcessor:
         try:
             status = json.loads(data)
         except:
-            raise
             return None
         
         for status_type in self.commands:
