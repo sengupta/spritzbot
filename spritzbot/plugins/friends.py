@@ -11,5 +11,5 @@ def commands():
             }
            ]
     
-def process(data):
+def process(status):
     return "Hello Friends!"

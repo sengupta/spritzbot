@@ -60,7 +60,7 @@ class TweetProcessor:
                             # or better - send a tweepy api object to the
                             # processing module so it can take actions
                             # independently.
-                            print self.plugins[command['plugin']].process(data)
+                            print self.plugins[command['plugin']].process(status)
 
 
 if __name__ == '__main__':

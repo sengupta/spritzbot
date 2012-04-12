@@ -11,5 +11,6 @@ def commands():
             }
            ]
     
-def process(data):
-    return "Hello World!"
+def process(status):
+    return "%s: %s" %(status['user']['screen_name'], status['text'])
+    
