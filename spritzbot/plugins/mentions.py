@@ -5,11 +5,11 @@ def commands():
     """
     return [
             {
-                'type':'friends',
+                'type':'text',
                 'triggers':[re.compile('.*')],
-                'field':'all',
+                'field':'text'
             }
            ]
     
 def process(data):
-    return "Hello Friends!"
+    return "Hello World!"
