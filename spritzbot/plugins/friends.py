@@ -11,5 +11,5 @@ def commands():
             }
            ]
     
-def process(status):
-    return "Hello Friends!"
+def process(event):
+    return "You have %s friends." %(len(event['friends']))
